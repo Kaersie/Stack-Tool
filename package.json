@@ -1,0 +1,28 @@
+{
+  "name": "muticlock",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "easy-typer-js": "^2.1.0",
+    "element-plus": "^2.7.8",
+    "screenfull": "^6.0.2",
+    "vue": "^3.4.31",
+    "vue-demi": "^0.14.10",
+    "vue-router": "^4.4.2",
+    "vue3-cookies": "^1.0.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "less": "^4.2.0",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-vue-components": "^0.27.3",
+    "vite": "^5.3.4"
+  }
+}
