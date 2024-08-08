@@ -1,27 +1,27 @@
     <style>
     @media screen and (max-width: 350px) {
-        .times{width: 200px;height: 200px;}
-   .contents {font-size: 60px;}
+        .times{width: 220px;height: 220px;}
+   .contents {font-size: 65px;}
   /*fold竖屏*/
 }
 
 @media screen and (max-width: 500px) and (min-width:350px){
-       .times{width: 350px;height: 350px;}
-   .contents {font-size: 90px;}
+       .times{width: 300px;height: 300px;}
+   .contents {font-size: 70px;}
   
 }/*手机竖屏*/
 @media screen and (max-width: 768px) and (min-width:500px){
-      .times{width: 350px;height:350px;}
-   .contents {font-size: 60px;}
+      .times{width: 220px;height:220px;}
+   .contents {font-size: 50px;}
 }/*小手机横*/
 
 @media screen and (min-width:768px) and (max-width:1000px) {
    .times{width: 250px;height:250px;}
-   .contents {font-size: 60px;} /*手机横屏*/
+   .contents {font-size: 75px;} /*手机横屏*/
 }
 
 @media screen and (min-width: 1000px) and (max-width:1300px) {
-   .times{width: 500px;height: 500px;}
+   .times{width: 450px;height: 450px;}
    .contents {font-size: 120px;}
 }
 

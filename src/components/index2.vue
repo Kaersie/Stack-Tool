@@ -2,45 +2,6 @@
 
 	<br>
 
-	<el-drawer
-	size="50%"
-    v-model="drawer"
-    title="关于本站"
-  >
-	<h2>功能</h2><br>
-	<p>翻页时钟√</p>
-	<p>表盘时钟√</p>
-	<p>番茄时钟√</p>
-	<p>正计时器√</p>
-	<p>倒计时器√</p>
-	<p>拖拽分屏时钟√</p>
-	<p>时钟精度到达毫秒⚪</p>
-	<p>增加抽签工具板块⚪</p>
-	<p>增加网页工具板块⚪</p>	
-	<br><br>
-	<h2>开发</h2><br>
-	<p>本项目仍然处于开发阶段，我们期待您给我们一些建议与支持！</p><br><br>
-    <h2>作者</h2>
-	<p><br>
-		卡尔斯厄<br>
-		个人网站：<a class="thanks" href="https://kaersie.github.io">kaersie.github.io</a><br>
-		B站：<a class="thanks" href="https://space.bilibili.com/1026296481">bilibili@卡尔斯厄</a><br>
-		Github：<a class="thanks" href="https://github.com/kaersie">Kaersie</a><br>
-	</p><br><br>
-	<h2>致谢</h2><br>
-		<p>以下是本项目使用到的第三方库和框架：</p>
-		<br><a class="thanks" href="https://cn.vuejs.org/">Vue.js</a>
-		<br><a class="thanks" href="https://element-plus.org/">Element Plus</a>
-		<br><a class="thanks" href="https://vitejs.cn/">Vite.js</a>
-		<br><a class="thanks" href="https://router.vuejs.org/">Vue Router</a>
-		<br><a class="thanks" href="https://github.com/rongang/vue-drag-split">VueDragSplit</a>
-		<br><a class="thanks" href="https://github.com/Yuezi32/flipClock">flipClock</a>
-		<br><a class="thanks" href="https://blog.csdn.net/qq_39708228/article/details/114921340">Vue3Cookie</a>
-		<br><a class="thanks" href="https://github.com/bestvist/vue-clock2/">Vue-Clock2</a>
-		<br><a class="thanks" href="https://github.com/sindresorhus/screenfull">ScreenFull</a>
-		<br><a class="thanks" href="https://github.com/unplugin/unplugin-vue-components">unplugin-vue-components</a>
-		<br><a class="thanks" href="https://github.com/unplugin/unplugin-auto-import">unplugin-auto-import</a>
-  </el-drawer>
 
 	<el-row :gutter="21" style="margin-left: 10px;margin-right: 10px;">
 		<el-col v-for="(item, index) in items" :xs="20" :sm="10" :md="8" :lg="7" :xl="5" @click="jump(item.link)"
@@ -111,11 +72,7 @@ const items = reactive([
 	{
 		name: '分屏时钟', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" data-v-d2e47025=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36z"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></i>',
 		other: '实现同一页面多开时间工具<br>支持所有工具<br>适用于辩论、比赛等场景', link: '/splitclock'
-	},
-	{
-		name: '关于网站', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" data-v-d2e47025=""><path fill="currentColor" d="M512 128v64H256a64 64 0 0 0-64 64v512a64 64 0 0 0 64 64h512a64 64 0 0 0 64-64V512h64v256a128 128 0 0 1-128 128H256a128 128 0 0 1-128-128V256a128 128 0 0 1 128-128z"></path><path fill="currentColor" d="M768 384a128 128 0 1 0 0-256 128 128 0 0 0 0 256m0 64a192 192 0 1 1 0-384 192 192 0 0 1 0 384"></path></svg></i>',
-		other: '版本: 0.0.1 Build<br>作者: 卡尔斯厄 ( bilibili@卡尔斯厄 )<br>点此查看更多', link: 'about'
-	},
+	}
 ])
 console.log(items)
 

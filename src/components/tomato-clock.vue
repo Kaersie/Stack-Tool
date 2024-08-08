@@ -7,27 +7,27 @@
 }
 
 @media screen and (max-width: 500px) and (min-width:350px){
-       .time{width: 350px;height: 350px;}
-   .time2{width: 260px;font-size:30px;height:60px;}
-   .content {font-size: 90px;}
+       .time{width: 300px;height: 300px;}
+   .time2{width: 260px;font-size:15px;height:30px;}
+   .content {font-size: 65px;}
   
 }/*手机竖屏*/
 @media screen and (max-width: 768px) and (min-width:500px){
-      .time{width: 400px;height:400px;}
-   .time2{width: 300px;font-size:30px;height:60px;}
-   .content {font-size: 100px;}
+      .time{width: 220px;height:220px;}
+   .time2{width: 200px;font-size:15px;height:30px;}
+   .content {font-size: 50px;}
 }/*小手机横*/
 
 @media screen and (min-width:768px) and (max-width:1000px) {
-   .time{width: 500px;height:500px;}
-   .time2{width: 400px;font-size:30px;height:60px;}
-   .content {font-size: 120px;} /*手机横屏*/
+   .time{width: 250px;height:250px;}
+   .time2{width: 200px;font-size:15px;height:30px;}
+   .content {font-size: 75px;} /*手机横屏*/
 }
 
 @media screen and (min-width: 1000px) and (max-width:1300px) {
-   .time{width: 600px;height: 600px;}
-   .time2{width: 300px;font-size:30px;height:60px;}
-   .content {font-size: 130px;}
+   .time{width: 350px;height: 350px;}
+   .time2{width: 300px;font-size:20px;height:40px;}
+   .content {font-size: 90px;}
 }
 
   @media screen and (min-width: 1300px) {
@@ -65,7 +65,7 @@
             
             margin: auto;
             position: absolute;
-            top: 10px;
+            top: 15px;
             left:0;
             right:0;
             display: flex;
@@ -101,7 +101,6 @@
         </div>
     </div>
 </div>
-<el-alert title="手机端竖屏体验更佳哦" type="warning" center show-icon />
  <el-affix position="bottom" :offset="2">
 			<el-menu
        :default-active="activeIndex"
@@ -126,33 +125,6 @@ function full(){
   }
 }
 
-  function setCookie(cname, cvalue, exdays = 720) {
-    var d = new Date()
-    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
-    var expires = "expires=" + d.toUTCString()
-    document.cookie = cname + "=" + cvalue + "; " + expires
-  }
-
-  function getCookie(cname) {
-    var name = cname + "="
-    var ca = document.cookie.split(";")
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i]
-      while (c.charAt(0) == " ") c = c.substring(1)
-      if (c.indexOf(name) != -1) {
-        return c.substring(name.length, c.length)
-      }
-    }
-    return ""
-  }
-
-  function clearCookie(cname) {
-    var d = new Date()
-    d.setTime(-1)
-    var expires = "expires=" + d.toUTCString()
-    document.cookie = cname + "=''; " + expires
-  }
-
  const time = ref(25)
  let t=time.value*60
  var open=false;
@@ -161,25 +133,23 @@ function full(){
    var countdown = document.getElementById('now_time');
   countdown.innerHTML=time.value+":00"
    t=time.value*60
+   //t=time.value
 }
 const ins=ref()
 const tomato=ref(0)
-tomato.value=parseInt(getCookie('tomato'));
-if (getCookie('tomato')==""){
-    setCookie('tomato',0);
-    tomato.value==getCookie('tomato');
+tomato.value=parseInt(localStorage.getItem("tomato"));
+if (localStorage.getItem("tomato")==null){
+    localStorage.setItem("tomato", 0);
+    tomato.value=localStorage.getItem("tomato");
 }
-if(tomato.value==NaN){tomato.value=0}
 console.log(tomato.value)
 
 const tomatot=ref(0)
-tomatot.value=parseInt(getCookie('tomatot'));
-if (getCookie('tomatot')==""){
-    setCookie('tomatot',0);
-    tomato.value==getCookie('tomatot');
+tomatot.value=parseInt(localStorage.getItem("tomatot"));
+if (localStorage.getItem("tomatot")==null){
+    localStorage.setItem("tomatot", 0);
+    tomatot.value=localStorage.getItem("tomatot");
 }
-if(tomatot.value==NaN){tomatot.value=0}
-console.log(tomatot.value)
 
 let tf;
       
@@ -192,8 +162,8 @@ let tf;
                 countdown.innerHTML="Finish!"
                 tomato.value+=1;
                 tomatot.value=tomatot.value+time.value
-                setCookie('tomato',tomato.value);
-                setCookie('tomatot',tomatot.value);
+                localStorage.setItem('tomato',tomato.value);
+                localStorage.setItem('tomatot',tomatot.value);
                 clearInterval(tf)
                 tf=undefined;
                 alert('专注目标达成！今日 Tomato +1')

@@ -12,11 +12,15 @@
 	</div>
 	<br><br><br>
 
+
 	<el-drawer
 	size="50%"
     v-model="drawer"
-    title="关于本站"
+    title="关于软件"
   >
+	<h1>时间栈</h1><br>
+	<a class="thanks" href="https://toolstack.rth10.com/">https://toolstack.rth10.com/  (复制打开)</a>
+	<p>这是一个用 Vue + Element UI 构建的时间工具，以简洁的设计为您高效工作提供帮助</p><br><br>
 	<h2>功能</h2><br>
 	<p>翻页时钟√</p>
 	<p>表盘时钟√</p>
@@ -49,7 +53,9 @@
 		<br><a class="thanks" href="https://github.com/bestvist/vue-clock2/">Vue-Clock2</a>
 		<br><a class="thanks" href="https://github.com/sindresorhus/screenfull">ScreenFull</a>
 		<br><a class="thanks" href="https://github.com/unplugin/unplugin-vue-components">unplugin-vue-components</a>
-		<br><a class="thanks" href="https://github.com/unplugin/unplugin-auto-import">unplugin-auto-import</a>
+		<br><a class="thanks" href="https://github.com/unplugin/unplugin-auto-import">unplugin-auto-import</a><br><br>
+
+		<h3>本软件基于 GPL-3.0 开源协议</h3>
   </el-drawer>
 
 	<el-row :gutter="21" style="margin-left: 10px;margin-right: 10px;">
@@ -134,7 +140,10 @@ const router = useRouter()
 function jump(link) {
 	if(link=="about"){
 		drawer.value=true
-	}else{
+	} else if(link=="down"){
+		location.href="https://grasp.lanzout.com/b00659rdjg"
+	}
+	else{
 	router.push(link)
 	}
 }
@@ -166,8 +175,11 @@ const items = reactive([
 	},
 	{
 		name: '关于网站', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" data-v-d2e47025=""><path fill="currentColor" d="M512 128v64H256a64 64 0 0 0-64 64v512a64 64 0 0 0 64 64h512a64 64 0 0 0 64-64V512h64v256a128 128 0 0 1-128 128H256a128 128 0 0 1-128-128V256a128 128 0 0 1 128-128z"></path><path fill="currentColor" d="M768 384a128 128 0 1 0 0-256 128 128 0 0 0 0 256m0 64a192 192 0 1 1 0-384 192 192 0 0 1 0 384"></path></svg></i>',
-		other: '版本: 0.0.1 Build<br>作者: 卡尔斯厄 ( bilibili@卡尔斯厄 )<br>点此查看更多', link: 'about'
-	},
+		other: '版本: 0.0.2 Build<br>作者: 卡尔斯厄 ( bilibili@卡尔斯厄 )<br>点此查看更多', link: 'about'
+	},{
+		name: '客户端下载', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" ><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg></i>',
+		other: '版本: 0.0.2 Build<br>支持安卓、Windows 平台<br>其他平台可使用vue编译单文件直接运行', link: 'down'
+	}
 ])
 console.log(items)
 window.onload = () => {
