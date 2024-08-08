@@ -14,6 +14,9 @@
 <script setup>
 import data from './data/mbti1.json'
 import { ref } from 'vue'
+data.sort(function(){
+      return Math.random()-0.5
+  })
 const t=ref(data)
 function ff(){
    t.value.forEach(function(item){
