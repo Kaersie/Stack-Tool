@@ -102,12 +102,13 @@
         
 </template>
 <script setup>
+import screenfull from "screenfull";
+import { ref } from 'vue'
 let t=65;
 let h,m,s;
 let open=0;
 let tf=undefined;
-import screenfull from "screenfull";
-import { ref } from 'vue'
+
 	const activeIndex = ref('2-1')
 const lasttime=ref('00:01:05')
 function cg(){

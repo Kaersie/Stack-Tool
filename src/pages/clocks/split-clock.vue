@@ -20,8 +20,8 @@
 
 <script setup>
 import { ref } from "@vue/reactivity";
-import "./split/style.css";
-import { VueDragSplit, splitDirectionMap } from "./split/index";
+import "../../components/split/style.css";
+import { VueDragSplit, splitDirectionMap } from "../../components/split/index";
 import Index from './index2.vue';
 const activeTabKey = ref("");
 const windowList = ref(

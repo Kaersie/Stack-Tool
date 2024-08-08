@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import FlipClock from './clock/flipclock.vue'
+import FlipClock from '../../components/clock/flipclock.vue'
 
 export default {
   name: 'app',
