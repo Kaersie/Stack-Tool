@@ -1,4 +1,5 @@
 <template>
+    <div>
     <h2 style="margin: 30px;">MBTI 测试器</h2>
     <p  style="margin: 30px;">
         注意事项: 1.请在心态平和及时间充足的情况下才开始答题。<br>
@@ -8,12 +9,20 @@
     </p>
     <el-button style="margin: 30px;" @click="ff" text bg>简易版</el-button>
     <el-button style="margin: 30px;" text bg>完整版</el-button><br>
-    <div   style="margin: 30px;" v-for="item in t">
-    <p>{{ item.q }}</p><br>
-    <el-radio-group v-model="item.r">
-    <el-radio-button value="a">{{ item.a }}</el-radio-button><br>
-    <el-radio-button value="b">{{ item.b }}</el-radio-button>
-    </el-radio-group><br>
+        <div v-for="item in t">
+    <p style="margin: 20px;font-weight: bold;" >{{ item.q }}</p>
+    <div style="display: flex;">
+    <p class="pp" style="margin-left:20px">{{ item.a }}</p>
+    <el-radio-group v-model="item.r"  style="margin-left:10px;margin-right:10px;min-width:175px">
+    <el-radio-button size="small" value="5">2</el-radio-button>
+    <el-radio-button size="small" value="4">1</el-radio-button>
+    <el-radio-button size="small" value="3">0</el-radio-button>
+    <el-radio-button size="small" value="2">1</el-radio-button>
+    <el-radio-button size="small" value="1">2</el-radio-button>
+</el-radio-group>
+    <p class="pp"  style="margin-right:20px">{{ item.b }}</p>
+</div><br><br>
+    </div>
     </div>
 </template>
 <script setup>
@@ -29,3 +38,11 @@ function ff(){
    })
 }
 </script>
+
+<style>
+.pp{
+    margin: 0 20px;
+    width:100px
+}
+
+</style>
