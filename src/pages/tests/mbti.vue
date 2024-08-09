@@ -27,6 +27,7 @@
     </div>
     </div>
     <el-button style="margin: 30px;" @click="ff" text bg>提交</el-button>
+    <h2>{{  }}</h2>
 </template>
 <script setup>
 import data1 from './data/mbti1.json'
@@ -159,7 +160,11 @@ function ff(){
    }
   
    console.log(result1,result2,result3,result4)
-   console.log(result1+result2+result3+result4)
+   let result=result1+result2+result3+result4
+   console.log(result)
+   switch(result){
+    case "ESTJ":
+   }
    }
 </script>
 
