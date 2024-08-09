@@ -13,6 +13,7 @@ import Muti_Clock from "./pages/clocks/muti-clock.vue";
 import Float_Clock from "./pages/clocks/float-clock.vue";
 import Unfloat_Clock from "./pages/clocks/unfloat-clock.vue";
 import Split_Clock from "./pages/clocks/split-clock.vue";
+import Ip from "./pages/tool/ip.vue";
 import Mbti from "./pages/tests/mbti.vue";
 import Not from "./pages/404.vue";
 const routes = [
@@ -25,6 +26,7 @@ const routes = [
   { path: "/unfloatclock", name: "倒计时器", component: Unfloat_Clock },
   { path: "/splitclock", name: "分屏计时", component: Split_Clock },
   { path: "/mbtitest", name: "MBTI测试", component: Mbti },
+  { path: "/ip", name: "IP测试", component: Ip },
   {
     path: "/:error*", // 会匹配所有路径
     name: "404",
