@@ -1,5 +1,105 @@
-# Vue 3 + Vite
+# 工具栈(原时间栈)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 功能
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+翻页时钟√
+
+表盘时钟√
+
+番茄时钟√
+
+正计时器√
+
+倒计时器√
+
+拖拽分屏时钟√
+
+时钟精度到达毫秒⚪
+
+增加抽签工具板块⚪
+
+增加网页工具板块⚪
+
+  
+## 开发
+
+本项目仍然处于开发阶段，我们期待您给我们一些建议与支持！
+
+  
+## 作者
+
+卡尔斯厄  
+个人网站：[kaersie.github.io](https://kaersie.github.io)  
+B站：[bilibili@卡尔斯厄](https://space.bilibili.com/1026296481)  
+Github：[Kaersie](https://github.com/kaersie)  
+
+  
+## 致谢
+
+以下是本项目使用到的第三方库和框架：
+
+[Vue.js](https://cn.vuejs.org/)  
+[Element Plus](https://element-plus.org/)  
+[Vite.js](https://vitejs.cn/)  
+[Vue Router](https://router.vuejs.org/)  
+[VueDragSplit](https://github.com/rongang/vue-drag-split)  
+[flipClock](https://github.com/Yuezi32/flipClock)  
+[Vue3Cookie](https://blog.csdn.net/qq_39708228/article/details/114921340)  
+[Vue-Clock2](https://github.com/bestvist/vue-clock2/)  
+[ScreenFull](https://github.com/sindresorhus/screenfull)  
+[unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components)  
+[unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import)
+
+
+
+# Stack-Tool
+ 
+## Function
+ 
+Flip clock√
+ 
+Dial clock√
+ 
+Tomato Clock√
+ 
+Positive timer√
+ 
+Countdown timer√
+ 
+Drag the split-screen clock√
+ 
+The clock accuracy reaches milliseconds⚪
+ 
+Add the lottery tool section⚪
+ 
+Add the webpage tool section⚪
+ 
+  
+## Development
+ 
+This project is still in the development stage, and we look forward to your suggestions and support!
+ 
+  
+## Author
+ 
+Kaersie
+Personal website: [kaersie.github.io](https://kaersie.github.io)https://kaersie.github.io)  
+Bilibili: [bilibili@kaersie](https://space.bilibili.com/1026296481)  
+Github：[Kaersie](https://github.com/kaersie)  
+ 
+  
+## Thanks
+ 
+The following are the third-party libraries and frameworks used in this project:
+ 
+[Vue.js](https://cn.vuejs.org/)  
+[Element Plus](https://element-plus.org/)  
+[Vite.js](https://vitejs.cn/)  
+[Vue Router](https://router.vuejs.org/)  
+[VueDragSplit](https://github.com/rongang/vue-drag-split)  
+[flipClock](https://github.com/Yuezi32/flipClock)  
+[Vue3Cookie](https://blog.csdn.net/qq_39708228/article/details/114921340)  
+[Vue-Clock2](https://github.com/bestvist/vue-clock2/)  
+[ScreenFull](https://github.com/sindresorhus/screenfull)  
+[unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components)  
+[unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import)
