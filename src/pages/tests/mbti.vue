@@ -36,9 +36,9 @@
   </el-card>
 </template>
 <script setup>
-import data1 from '/data/mbti1.json'
-import data2 from '/data/mbti2.json'
-import data3 from '/data/test.json'
+import data1 from '/public/data/mbti1.json'
+import data2 from '/public/data/mbti2.json'
+import data3 from '/public/data/mbti3.json'
 import { ref } from 'vue'
 const display=ref('off')
 const name=ref("")
