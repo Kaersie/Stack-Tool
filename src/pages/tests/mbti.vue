@@ -12,22 +12,22 @@
     <el-button style="margin: 30px;" @click="ff2" text bg>简易版(48题，还算准确)</el-button>
     <el-button style="margin: 30px;" @click="ff1" text bg>完整版(93题，较为准确)</el-button><br>
         <div v-for="(item,index) in res">
-    <p style="margin: 20px;font-weight: bold;" >{{index+1}}.{{ item.q }}</p>
-    <div style="display: flex;">
-    <p class="pp" style="margin-left:20px">{{ item.a }}</p>
-    <el-radio-group v-model="item.r"  style="margin-left:10px;margin-right:10px;min-width:175px">
+    <p style="margin-left: 5px;font-weight: bold;" >{{index+1}}.{{ item.q }}</p>
+    <el-row :gutter="15" >
+    <el-col :span="5" style="margin-left:15px"><p class="pp" >{{ item.a }}</p></el-col>
+    <el-col :span="10" style="margin-left:20px;margin-right:5px"><el-radio-group v-model="item.r"  style="min-width:175px">
     <el-radio-button size="small" value="5">2</el-radio-button>
     <el-radio-button size="small" value="4">1</el-radio-button>
     <el-radio-button size="small" value="3">0</el-radio-button>
     <el-radio-button size="small" value="2">1</el-radio-button>
     <el-radio-button size="small" value="1">2</el-radio-button>
-</el-radio-group>
-    <p class="pp"  style="margin-right:20px">{{ item.b }}</p>
-</div><br><br>
+</el-radio-group></el-col>
+<el-col :span="5" style="margin-right:15px"> <p class="pp" >{{ item.b }}</p></el-col>
+</el-row><br><br>
     </div>
     </div>
     <el-button style="margin: 30px;" @click="ff" text bg>提交</el-button>
-    <el-card style="max-width: 100%;margin: 50px;" :class="display">
+    <el-card style="max-width: 100%;margin: 20px;" :class="display">
     <template #header>
         <h2>{{name}}</h2>
     </template>
@@ -170,8 +170,31 @@ function ff(){
   
    console.log(result1,result2,result3,result4)
    let result=result1+result2+result3+result4
-   console.log(result)
+    console.log(result)
    switch(result){
+    case "INTP":
+        name.value="INTP 逻辑学家";
+        text.value= `
+        <div class="description__content">
+<p>逻辑学家以其独特的视角和旺盛的智力而自豪。他们不禁对宇宙的奥秘感到困惑--这也许可以解释为什么有史以来一些最有影响力的哲学家和科学家都是逻辑学家。这种人格类型相当罕见，但凭借他们的创造力和发明，逻辑学家并不惧怕在人群中脱颖而出。</p>
+<h2>心灵的生活</h2>
+<p>逻辑学家经常陷入沉思--这不一定是一件坏事。这种性格类型的人几乎不会停止思考。从他们醒来的那一刻起，他们的脑海里就充满了想法、问题和洞察。有时，他们甚至会发现自己在自己的头脑中进行全方位的辩论。</p>
+<div class="description-pullout">富有想象力和好奇心的逻辑学家可以在自己的思想运作中找到无尽的魅力。</div>
+<p>站在局外看，逻辑学家似乎生活在永无止境的白日梦中。他们以沉思、超然和有点内向而为人所知。也就是说，除非他们试图把他们所有的精神能量转移到当前或身边的人，否则可能会让所有人感到不太舒服。但是，无论他们处于哪种模式，逻辑学家都是内向的，并且倾向于因广泛的社交而感到疲倦。漫长的一天后，他们渴望有时间独自征询自己的想法。</p>
+<p>但是认为逻辑学家不友好或拘谨是错误的。当他们与一个能与他们的精神能量相匹配的人联系时，这些人格绝对会发光，从一个想法跳到另一个想法。很少有事情像有机会交换想法或与另一个好奇的、爱追根究底的灵魂进行热烈的辩论一样使他们充满活力。</p>
+<h2>一切的基础，我敬爱的逻辑学家</h2>
+<p>逻辑学家喜欢分析模式。不一定知道他们是如何做到的，但这种性格类型的人通常会有夏洛克·福尔摩斯式的发现差异和非常规行为的诀窍。换句话说，对他们撒谎并不明智。</p>
+<p>具有讽刺意味的是，逻辑学家的话不应该总是从字面上理解。他们很少故意不诚实，但是由于他们的思想活跃，他们有时会充斥着他们一直没有充分思考过的想法和理论。他们可能会改变主意，从周末计划到基本的道德原则，而从未意识到一开始自己似乎已经下定了决心。此外，他们通常很乐意扮演他们实际上反对的观点的拥护者，以保持讨论的趣味性。</p>
+<div class="description-pullout">对于逻辑学家来说，最好的对话就像头脑风暴会议，有足够的空间容纳非常规的想法和假设。</div>
+<p>逻辑学家可以整天思考想法和可能性--他们经常这样做。虽说如此，但将这些想法变为现实的实际日常工作并不总是会引起他们的兴趣。幸运的是，在剖析棘手的多层问题并提出创造性的解决方案时，很少有人格类型能够与逻辑师的创造才能和潜力相提并论。</p>
+<h2>宇宙的奥秘</h2>
+<p>具有这种个性类型的人希望了解宇宙中的一切，但有一个领域特别容易让他们感到困惑：人性。但逻辑学家在逻辑和理性领域最有宾至如归的感觉。结果，他们会发现自己对情感和情绪影响人们行为 (包括他们自己的行为) 的不合逻辑，不合理的方式感到困惑。</p>
+<p>这并不意味着逻辑学家没有感觉。这些人通常希望为他们的朋友和亲人提供情感支持，但他们不一定知道如何做。而且由于他们无法决定提供支持的最佳、最有效的方式，因此他们可能会推迟做任何事情或说任何话。</p>
+<p>这种 “分析瘫痪” 会影响逻辑师生活的多个领域。这种性格类型的人即使是最小的决定也会过度思考。这会让他们感到效率低下，陷入困境，因为脑海中没完没了的想法让他们筋疲力尽，以至于难以完成任务。</p>
+<p>好消息是，逻辑学家不必长期陷入困境。他们的独特优势包括把他们从偶尔陷入的困境中解脱出来所需的一切。通过利用他们的创造力和开放的思想，逻辑学家可以发挥他们的全部潜力--既是思想家又是快乐、全面的人。</p></div>
+   <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/intp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/logician.svg"
+        break;
     case "ESTJ":
         name.value="ESTJ 总经理";
         text.value= `<p>总经理人格类型的人是传统和秩序的代表，利用他们对正确，错误和社会标准的理解来团结家庭和社区。他们诚实，爱奉献，有尊严，他们的明确建议和指导被人看重，也愿意披荆斩棘，带领大家努力前行。他们会因为团结大家而骄傲，常常承担起社区组织者的角色，努力组织大家一起庆祝当地重要的节日，或守护着那些使家庭和社区紧密相连的传统价值观。</p><h3>以身作则</h3>
@@ -179,7 +202,7 @@ function ff(){
 <p>总经理清晰地感知到他们周围的环境，并生活在一个清晰、可核实事实的世界里--他们对知识的把握意味着，即使面对强大的抵抗，他们也会坚持自己的原则，推动一种明确的愿景，即什么是可以接受的，什么是不可以接受的。他们的观点也不只是空谈，因为总经理们非常愿意深入到最具挑战性的项目中，改进行动计划，并在此过程中对细节进行分类，即使最复杂的任务也显得轻松而易于完成。</p>
 <p>然而，总经理们不会独自工作，他们期望自己的可靠性和职业道德得到回馈--这种性格类型的人实现了他们的承诺，如果合伙人或下属因无能或懒惰，或者更糟糕的是不诚实而危及他们，他们会毫不犹豫地表现出愤怒。这可能为他们赢得不够灵活的声誉，这是所有守护者都拥有的特质，但这并不是因为总经理任意这般固执，而是因为他们真正相信这些价值观能维持社会正常运转。</p>
 <h3>更大的责任</h3>
-        <p>总经理面临的主要挑战是要认识到，并不是每个人都遵循相同的路线或以相同的方式做出贡献。真正的领导者认识到个人以及团队的力量，并帮助将这些人的想法引入实施层面上。这样，总经理就确实掌握了所有的事实，并且能够把每个人引向有效的方向。</p><br><br> <a href="https://www.16personalities.com/ch/estj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <p>总经理面临的主要挑战是要认识到，并不是每个人都遵循相同的路线或以相同的方式做出贡献。真正的领导者认识到个人以及团队的力量，并帮助将这些人的想法引入实施层面上。这样，总经理就确实掌握了所有的事实，并且能够把每个人引向有效的方向。</p><br><br> <a class="ambti"  href="https://www.16personalities.com/ch/estj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/images/personality-types/scenes/sentinels_Executive_ESTJ_introduction.svg"
         break;
     case "INTJ":
@@ -208,7 +231,7 @@ function ff(){
 <h2>人生如棋</h2>
 <p>建筑师充满了矛盾。他们富有想象力但果断，雄心勃勃但秘而不宣，好奇但专注。从外部来看，这些矛盾面似乎令人困惑，但是一旦您了解了建筑师思想的内在运作，它们就完全说得通了。</p>
 <p>对于这些人格，生活就像一盘棋。建筑师依靠策略而不是几率，在采取行动之前就考虑了每一步的优缺点。他们永远不会失去信心，只要有足够的独创性和洞察力，他们就能找到取胜的方法--无论沿途会出现什么挑战。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/intj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/intj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/architect.svg"
         break;
     case "ENTJ":
@@ -223,7 +246,7 @@ function ff(){
 <h2>值得进行的挑战</h2>
 <p>情感表达并不是任何分析师类型的强项，但是指挥官与情感的距离之大尤其明显，并且被更广泛的人们直接感受到。特别是在专业环境中，指挥官只会粉碎他们认为效率低下、无能或懒惰者的敏感情感。对于指挥官性格类型的人来说，情感表现是软弱的表现，但用这种方法很容易树敌--指挥官需要记住，他们绝对依赖于拥有一个运转良好的团队，不仅是为了实现他们的目标，也是为了他们的认可和反馈，奇怪的是，对于这一点指挥官非常敏感。</p>
 <p>指挥官是真正的强者，他们树立了生活中强大的形象--而且经常如此。他们需要记住，他们的地位不仅来自他们自己的行为，还来自支持他们的团队的行为，重要的是要认识到他们的贡献、才能和需求，特别是从情感的角度来看，他们的支持网络。即使他们不得不采取 “装着装着就成真了” 的心态，但如果指挥官能够将情感上健康的关注与他们的许多优势相结合，他们将获得深厚、令人满意的关系和他们能处理的所有挑战的胜利。</p></div> <!----> <!----></article>
-        <br><br> <a href="https://www.16personalities.com/ch/entj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/entj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/commander.svg"
         break;
     case "ENTP":
@@ -243,7 +266,7 @@ function ff(){
 <p>并非每个场合都需要这种人格类型的默认逆势作为，大多数人忍受他们的信念受到质疑以及不顾他们的感受的时间是有限的。结果，辩论家可能会发现他们喜欢争辩的乐趣常常在不经意间烧毁了许多桥梁。辩论家因其远见、自信、知识和敏锐的幽默感而受到尊重--但除非他们培养一点敏感性，否则他们可能会很难维持更深层次的关系，甚至不能实现自己的职业目标。</p>
 <div class="description-pullout">许多辩论家发现，在努力建立牢固的关系时，更富有同情心的方法值得探究。</div>
 <p>随着时间的过去，许多辩论家意识到他们的理想生活涉及其他人，而在 “赢得” 争论上花费太多精力最终意味着剥夺自己获得理想生活所需的支持。好消息是，具有这种性格类型的人永远不会失去其明显的不顺从的优势。他们可以轻松地利用自己的认知灵活性来理解和探索他人的观点，认识到多方考虑和妥协的价值，同时考虑逻辑和进展。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/entp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/entp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/images/personality-types/scenes/analysts_Debater_ENTP_introduction.svg"
         break;
     case "INFJ":
@@ -264,7 +287,7 @@ function ff(){
 <h2>个人使命</h2>
 <p>许多倡导者认为，他们的生活有一个独特的目标--一个他们来到地球上要完成的使命。对于具有这种个性类型的人来说，生活中最有意义的方面之一就是寻找这个目的--然后，一旦他们找到了这个目的，就努力做到这一点。</p>
 <p>当倡导者遇到不公平或不公正时，他们很少放弃--相反，他们会参考自己的直觉和同情心来找到解决方案。  凭借他们与生俱来的平衡心灵和头脑的能力，倡导者天生就能纠正世界上的错误，无论是大是小。这些人只需要记住，当他们忙于照顾其他人的时候，他们需要偶尔停下来，照顾好自己。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/images/personality-types/scenes/diplomats_Advocate_INFJ_introduction.svg"
         break;
     case "INFP":
@@ -284,7 +307,7 @@ function ff(){
 <h2>寻找一种呼唤</h2>
 <p>这种性格类型的人往往会感到没有方向或被卡住，直到他们与生活的目标感联系在一起。对于许多调停者来说，这个目的与鼓舞他人有关，也与他们能够感觉到他人的痛苦就像是他们自己的痛苦有关。虽然调停者希望帮助每个人，但他们需要集中精力和努力--否则，他们最终可能会筋疲力尽。</p>
 <p>幸运的是，就像春天的花朵一样，即使在最黑暗的季节之后，调停者的创造力和理想主义也能绽放。尽管他们知道世界永远不会完美，但调停者仍然在乎尽其所能使世界变得更好。这种做正确事情的默默信念可能解释了为什么这些人无论走到哪里，总是激发出同情、善良和美丽。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/infp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/infp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/mediator.svg"
         break;
     case "ENFJ":   
@@ -305,7 +328,7 @@ function ff(){
 <h2>引领道路</h2>
 <p>具有这种性格类型的人是忠诚的利他主义者，他们随时准备面对吊索和箭头，以捍卫他们所信仰的人和思想。这种信念的力量增强了主人公与生俱来的领导才能，尤其是他们指导人们共同为更高的利益服务的能力。</p>
 <p>但他们最大的天赋实际上可能是以身作则。在他们的日常生活中，主人公揭示了如何以同情、奉献和关怀来处理看似普通的情况。对于这些人来说，即使是最小的日常选择和行动--从他们如何度过周末，到他们对苦苦挣扎的同事说的话--都可以成为引领通往更光明未来的机会。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/images/personality-types/scenes/diplomats_Protagonist_ENFJ_introduction.svg"
         break;
     case "ENFP":
@@ -324,7 +347,7 @@ function ff(){
 <p>即使在欢乐开怀的时刻，竞选者也希望与他人建立情感联系。对这些人格类型来说，没有什么比与他们珍惜的人进行真诚的交谈更重要的了。竞选者认为，每个人都应该表达自己的感受，他们的同理心和热情创造了一个空间，即使是最胆小的灵魂也可以敞开心扉。</p>
 <p>不过，这种性格类型的人需要小心。竞选者的直觉可能会导致他们过多地解读他人的行为和表现。竞选者可能不会简单地要求解释，而是最终会对别人的愿望或意图感到困惑。这种社会压力使注重和谐的竞选者彻夜难眠。</p>
 <p>竞选者在找到正确的生活道路之前，将花费大量时间探索不同的关系、感觉和想法。但是，当他们最终找到自己的路时，他们的想象力、同理心和勇气不仅可以照亮自己的生活，还可以照亮周围的世界。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/enfp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/enfp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/campaigner.svg"
         break;
     case "ISTJ":
@@ -343,7 +366,7 @@ function ff(){
 <p>物流师的奉献精神是令人钦佩的品质，这推动了他们取得许多成就。但这也可能成为其他人利用的弱点。物流师以其强烈的职业道德和责任感，可能会经常发现自己承担着他人的责任。即使他们不抱怨这种情况，如果物流师经常被期望(或自己承担责任)为同事、朋友或亲人收拾残局，他们最终可能会精疲力尽或心灰意冷。</p>
 <div class="description-pullout">物流师可能会发现自己在做别人的工作--却没有为此获得功劳。</div>
 <p>物流师并不善于表达自己的情绪，但这并不意味着这种性格类型的人在承受超过额定负荷时不会感到沮丧或怨恨。除非他们确保他们的关系是平衡和可持续的，否则物流师最终可能会损害他们认为需要保护的非常稳定的状态。好消息是，通过学习设定适当的界限并在过度紧张时大声疾呼，物流师可以为世界提供他们许多天赋的全部利好，包括他们的清晰度、忠诚度和可靠性。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/istj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/istj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/images/personality-types/scenes/sentinels_Logistician_ISTJ_introduction.svg"
         break;
     case "ISFJ":
@@ -364,7 +387,7 @@ function ff(){
 <h2>为他人和自己露面</h2>
 <p>尽管他们内向，但守卫者具有深厚的社交本能。由于他们能够记住他人生活的细节，守卫者具有特殊的才能，可以使他们的朋友和熟人感到被人关注和珍惜。很少有人格类型能与守卫者在任何场合 (无论大小) 选择合适礼物的能力相提并论。</p>
 <p>敬业而周到的守卫者在帮助周围的人建立稳定、安全和幸福的生活中找到了极大的乐趣。对于这种性格类型的人来说，以为他人展示的方式来表现自己可能并不容易，但是当他们这样做时，他们往往会发现自己有更多的精力和动力在世界上做善事。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/isfj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/isfj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/defender.svg"
         break;
     case "ESFJ":
@@ -384,7 +407,7 @@ function ff(){
 <div class="description-pullout">执政官很少错过生日或假期。他们专注于自己的人际关系，即使是朋友和亲人生活中的最小细节也会被铭记。</div>
 <p>由于对秩序和结构的热爱，执政官更喜欢有计划的活动，而不是开放式活动或自发的聚会--他们很乐意主办这种活动，以确保一切顺利进行。这种性格的人会投入大量精力让别人觉得自己很特别，很受欢迎，当有人似乎不欣赏他们的努力时，他们可能会放在心上。</p>
 <p>对于许多具有执政官人格类型的人来说，生活中最大的挑战之一就是接受他们无法控制其他人的思想或行为--甚至无法控制与他们最亲近的人。幸运的是，执政官可以通过专注于他们最擅长的事情来找到和平与充实: 树立关怀、体恤和负责任的榜样--并在此过程中使人们团结在一起。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/consul.svg"
         break;
     case "ISTP":
@@ -403,7 +426,7 @@ function ff(){
 <p>鉴赏家将会逐渐了解到，许多其他性格类型的人在规则和可接受的行为上比他们更为严格--他们不想听到一个麻木不仁的笑话，当然也不会在背后议论别人，他们也不想参与恶作剧，即使有人愿意这样做。如果现场已经情绪化，那么无视这些限制可能会事与愿违。</p>
 <p>鉴赏家在预测情绪方面有特别的困难，但这只是他们公平性的自然延伸，因为要衡量鉴赏家的情绪和动机是非常困难的。然而，他们倾向于通过行动而不是通过同理心来探索他们的关系，这可能会导致一些非常令人沮丧的情况。具有鉴赏家性格类型的人在边界和准则上挣扎，他们更喜欢自由走动，并在他们需要时打破规则。</p>
 <p>找到一个可以与了解自己风格和不可预测性的好朋友一起工作的环境，结合他们的创造力、幽默感和动手方法来构建实用的解决方案和事物，将使鉴赏家在构建有用的实物方面拥有许多快乐的时光--并能从局外欣赏它们。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/istp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/istp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/virtuoso.svg"
         break;
     case "ISFP":
@@ -422,7 +445,7 @@ function ff(){
 <div class="description-pullout">除非他们为自己留出时间，否则探险家最终可能会在日常生活的浪潮中感到迷失，不断地对外部环境做出反应，而不是走自己的路。</div>
 <p>富有创造力和自由精神的探险家们按照自己的节奏前进，人们很容易认为他们并不特别担心别人对他们的看法。但事实并非如此--探险家深思熟虑、洞察力强，能够捕捉到人们未说出口的感受和意见，如果他们觉得自己不被喜欢、认可或欣赏，这可能会让他们感到不安。当面对批评时，对于这种性格类型的人来说，要不陷入一时的愤怒之中可能是一个挑战。如果他们遇到严厉或看似不公平的批评，他们甚至可能以惊人的方式发脾气。</p>
 <p>但是也有好的一面: 探险家生活在当下，他们知道他们不需要纠结于过去的伤痛或挫折。这种性格类型的人不关注事情会有什么不同，而是有一种不可思议的能力去欣赏生活中正确的一面。无论在哪里，探险家都能找到其他人可能会错过的美丽和享受的源泉——而这种视角只是他们与世界分享的众多礼物之一。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/isfp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/isfp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/adventurer.svg"
         break;
     case "ESFP":
@@ -439,7 +462,7 @@ function ff(){
 <p>表演者能识别价值和质量，这本身是一个很好的特征。但是他们倾向于没有一套好的规划，这可能会导致他们入不敷出，信用卡尤其堪忧。与计划长期目标相比，表演者更专注于抓住机会，他们可能会发现他们的注意力不集中可能使某些活动效果大打折扣。</p>
 <div class="description-pullout">如果表演者意识到他们被环境所束缚，无法加入他们的朋友，这会让他们非常沮丧。</div>
 <p>无论在哪里，只要需要欢笑、娱乐和尝试新鲜有趣事物的志愿者，都会欢迎表演者，没有什么比带其他人一起去兜风开怀更大的乐趣了。表演者可以一次聊几个小时，有时谈论的所有内容跟他们原准备谈论的内容毫不相干，并且无论在顺境还是逆境，他们都能感受到爱人的情感。如果他们能对即将发生的事情做好准备，他们将可以随时准备好和身后的朋友们探索世界上所有新的令人兴奋的事物。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/esfp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/esfp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/entertainer.svg"
         break;
     case "ESTP":
@@ -457,7 +480,7 @@ function ff(){
 <div class="description-pullout">有时，企业家的即时观察和行动正是所需要的，例如在某些公司环境中，尤其是在紧急情况下。</div>
 <p>但是，如果企业家不小心，他们可能会陷入困境，走得太远，对更敏感的人粗暴对待，或者忘记照顾自己的健康和安全。企业家仅占人口的4%，对于保持敏锐和高度的竞争力已足够，同时不会造成系统性风险。</p>
 <p>企业家充满激情和活力，辅之以理性的，有时是千头万绪的头脑。鼓舞人心，令人信服，丰富多彩，他们是天生的团体领袖，一路上引导每个人少走弯路，无论走到哪里都带来生机和兴奋。将这些品质用于建设性和有益的目的是企业家真正的挑战。</p></div>
-        <br><br> <a href="https://www.16personalities.com/ch/estp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
+        <br><br> <a class="ambti"  href="https://www.16personalities.com/ch/estp-%E4%BA%BA%E6%A0%BC">来源于 16Personalities</a>`;
         img.value="https://www.16personalities.com/static/animations/type-descriptions/introductions/entrepreneur.svg"
         break;
     }
@@ -467,8 +490,9 @@ function ff(){
 
 <style>
 .pp{
-    margin: 0 20px;
-    width:100px
+    width:80px;
+    
+    font-size:1em
 }
 .off{
     visibility: hidden;
@@ -481,4 +505,7 @@ p{
 }
 .on{
        visibility: visible;}
+.ambti{
+    color:#2a598a
+}
 </style>
