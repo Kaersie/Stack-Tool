@@ -19,7 +19,7 @@
     title="关于软件"
   >
 	<h1>工具栈(原时间栈)</h1><br>
-	<a class="thanks" href="https://toolstack.rth10.com/">https://toolstack.rth10.com/  (复制打开)</a>
+	<a class="thanks" href="https://toolstack.rth5.com/">https://toolstack.rth5.com/  (复制打开)</a>
 	<p>这是一个用 Vue + Element UI 构建的时间工具，以简洁的设计为您高效工作提供帮助</p><br><br>
 	<h2>功能</h2><br>
 	<p>翻页时钟√</p>
@@ -27,6 +27,13 @@
 	<p>番茄时钟√</p>
 	<p>正计时器√</p>
 	<p>倒计时器√</p>
+	<p>智能助手√</p>
+	<p>TTS朗读√</p>
+	<p>天气查询√</p>
+	<p>二维码制作√</p>
+	<p>IP查询√</p>
+	<p>成语查询√</p>
+	<p>MBTI√</p>
 	<p>拖拽分屏时钟√</p>
 	<p>时钟精度到达毫秒⚪</p>
 	<p>增加抽签工具板块⚪</p>
@@ -53,8 +60,8 @@
 		<br><a class="thanks" href="https://github.com/bestvist/vue-clock2/">Vue-Clock2</a>
 		<br><a class="thanks" href="https://github.com/sindresorhus/screenfull">ScreenFull</a>
 		<br><a class="thanks" href="https://github.com/unplugin/unplugin-vue-components">unplugin-vue-components</a>
-		<br><a class="thanks" href="https://github.com/unplugin/unplugin-auto-import">unplugin-auto-import</a><br><br>
-
+		<br><a class="thanks" href="https://github.com/unplugin/unplugin-auto-import">unplugin-auto-import</a>
+		<br><a class="thanks" href="https://api.vore.top/">OoyonghongoO</a><br><br>
 		<h3>本软件基于 GPL-3.0 开源协议</h3>
   </el-drawer>
 
@@ -64,8 +71,7 @@
 			<el-card style="max-width: 480px" shadow="hover" :key="index">
 				<template #header>
 					<div class="card-header">
-						<div v-html="item.icon"></div>
-						<br>
+						<icon :name="item.icon" size="42px" class="el-icon card" style="margin-bottom:15px"></icon>
 						<p style="text-align: center;">{{ item.name }}</p>
 					</div>
 				</template>
@@ -134,6 +140,7 @@
 }
 </style>
 <script setup>
+import { Icon } from 'tdesign-icons-vue-next';
 import { useRouter } from 'vue-router'
 import { reactive,ref } from 'vue'
 const drawer = ref(false)
@@ -151,38 +158,60 @@ function jump(link) {
 
 const items = reactive([
 	{
-		name: '数字时钟', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="m160 96.064 192 .192a32 32 0 0 1 0 64l-192-.192V352a32 32 0 0 1-64 0V96h64zm0 831.872V928H96V672a32 32 0 1 1 64 0v191.936l192-.192a32 32 0 1 1 0 64zM864 96.064V96h64v256a32 32 0 1 1-64 0V160.064l-192 .192a32 32 0 1 1 0-64l192-.192zm0 831.872-192-.192a32 32 0 0 1 0-64l192 .192V672a32 32 0 1 1 64 0v256h-64z"></path></svg></i>',
+		name: 'AI 优化助手', icon: 'crooked-smile',
+		other: '用 AI 优化每一件事情<br>支持各类问题<br>适用于“没思路”或“不了解”等情况', link: '/ai'
+	},{
+		name: '数字时钟', icon: 'watch',
 		other: '极简的翻页数字时间<br>支持背景色、全屏等参数设置<br>适用于考试或自习等场景', link: '/numberclock'
 	},
 	{
-		name: '分屏时钟', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" data-v-d2e47025=""><path fill="currentColor" d="m512 863.36 384-54.848v-638.72L525.568 222.72a96 96 0 0 1-27.136 0L128 169.792v638.72zM137.024 106.432l370.432 52.928a32 32 0 0 0 9.088 0l370.432-52.928A64 64 0 0 1 960 169.792v638.72a64 64 0 0 1-54.976 63.36l-388.48 55.488a32 32 0 0 1-9.088 0l-388.48-55.488A64 64 0 0 1 64 808.512v-638.72a64 64 0 0 1 73.024-63.36z"></path><path fill="currentColor" d="M480 192h64v704h-64z"></path></svg></i>',
+		name: '分屏时钟', icon: 'table-split',
 		other: '实现同一页面多开时间工具<br>支持所有工具<br>适用于辩论、比赛等场景', link: '/splitclock'
 	},
 	{
-		name: 'MBTI测试', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" ><path fill="currentColor" d="M512 512a192 192 0 1 0 0-384 192 192 0 0 0 0 384m0 64a256 256 0 1 1 0-512 256 256 0 0 1 0 512m320 320v-96a96 96 0 0 0-96-96H288a96 96 0 0 0-96 96v96a32 32 0 1 1-64 0v-96a160 160 0 0 1 160-160h448a160 160 0 0 1 160 160v96a32 32 0 1 1-64 0"></path></svg></i>',
+		name: 'MBTI测试', icon: 'personal-information',
 		other: '快速的MBTI测试工具<br>简易版，主打效率<br>适用于想要免费快速了解自己的人群', link: '/mbtitest'
 	},
 	{
-		name: '模拟时钟', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768m0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896"></path><path fill="currentColor" d="M480 256a32 32 0 0 1 32 32v256a32 32 0 0 1-64 0V288a32 32 0 0 1 32-32"></path><path fill="currentColor" d="M480 512h256q32 0 32 32t-32 32H480q-32 0-32-32t32-32"></path></svg></i>',
+		name: '模拟时钟', icon: 'time',
 		other: '类似于真实时钟的在线时间<br>支持背景色、全屏、等参数设置<br>适用于自习、工作、会议等场景', link: '/muticlock'
 	},
 	{
-		name: '番茄时钟', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 832a320 320 0 1 0 0-640 320 320 0 0 0 0 640m0 64a384 384 0 1 1 0-768 384 384 0 0 1 0 768"></path><path fill="currentColor" d="m292.288 824.576 55.424 32-48 83.136a32 32 0 1 1-55.424-32zm439.424 0-55.424 32 48 83.136a32 32 0 1 0 55.424-32zM512 512h160a32 32 0 1 1 0 64H480a32 32 0 0 1-32-32V320a32 32 0 0 1 64 0zM90.496 312.256A160 160 0 0 1 312.32 90.496l-46.848 46.848a96 96 0 0 0-128 128L90.56 312.256zm835.264 0A160 160 0 0 0 704 90.496l46.848 46.848a96 96 0 0 1 128 128z"></path></svg></i>',
+		name: '番茄时钟', icon: 'tomato',
 		other: '以番茄工作法为基础的计时器<br>支持背景、任务等参数设置<br>让自己于专注工作与学习', link: '/tomatoclock'
 	},
 	{
-		name: '正计时器', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 896a320 320 0 1 0 0-640 320 320 0 0 0 0 640m0 64a384 384 0 1 1 0-768 384 384 0 0 1 0 768"></path><path fill="currentColor" d="M512 320a32 32 0 0 1 32 32l-.512 224a32 32 0 1 1-64 0L480 352a32 32 0 0 1 32-32"></path><path fill="currentColor" d="M448 576a64 64 0 1 0 128 0 64 64 0 1 0-128 0m96-448v128h-64V128h-96a32 32 0 0 1 0-64h256a32 32 0 1 1 0 64z"></path></svg></i>',
+		name: 'TTS 文本朗读', icon: 'sound',
+		other: '快速文本转语音<br>基于 TTS 技术<br>适用于全平台', link: '/tts'
+	},
+	{
+		name: 'IP 查询', icon: 'location-parking-place',
+		other: '获取本机公网IP<br>支持查看归属地、邮编、运营商<br>适用于全平台', link: '/ip'
+	},
+	{
+		name: '二维码生成', icon: 'qrcode',
+		other: '生成高清二维码<br>支持快速生成<br>适用于全平台', link: '/qrcode'
+	},
+	{
+		name: '成语字典', icon: 'address-book',
+		other: '在线快速查词<br>支持拼音、释义、例句、出处等<br>适用于全平台', link: '/text'
+	},{
+		name: '天气查询', icon: 'cloudy-sunny',
+		other: '在线快速查天气<br>根据IP属地获取天气<br>支持风力、风向、湿度等数据', link: '/weather'
+	},
+	{
+		name: '正计时器', icon: 'play-circle-stroke',
 		other: '秒表计时工具<br>支持暂停、计次等功能<br>适用于考试、自习、比赛等场景', link: '/floatclock'
 	},
 	{
-		name: '倒计时器', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768m0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896"></path><path fill="currentColor" d="M672 234.88c-39.168 174.464-80 298.624-122.688 372.48-64 110.848-202.624 30.848-138.624-80C453.376 453.44 540.48 355.968 672 234.816z"></path></svg></i>',
+		name: '倒计时器', icon: 'replay',
 		other: '倒计时工具<br>支持播放提示音、暂停、重置、刷新等操作<br>适用于考试、自习、比赛等场景', link: '/unfloatclock'
 	},
 	{
-		name: '关于网站', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" data-v-d2e47025=""><path fill="currentColor" d="M512 128v64H256a64 64 0 0 0-64 64v512a64 64 0 0 0 64 64h512a64 64 0 0 0 64-64V512h64v256a128 128 0 0 1-128 128H256a128 128 0 0 1-128-128V256a128 128 0 0 1 128-128z"></path><path fill="currentColor" d="M768 384a128 128 0 1 0 0-256 128 128 0 0 0 0 256m0 64a192 192 0 1 1 0-384 192 192 0 0 1 0 384"></path></svg></i>',
+		name: '关于网站', icon: 'share-1',
 		other: '版本: 0.0.2 Build<br>作者: 卡尔斯厄 ( bilibili@卡尔斯厄 )<br>点此查看更多', link: 'about'
 	},{
-		name: '客户端下载', icon: '<i class="el-icon card" style="font-size: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" ><path fill="currentColor" d="M160 832h704a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64m384-253.696 236.288-236.352 45.248 45.248L508.8 704 192 387.2l45.248-45.248L480 584.704V128h64z"></path></svg></i>',
+		name: '客户端下载', icon: 'download',
 		other: '版本: 0.0.2 Build<br>支持安卓、Windows 平台<br>其他平台可使用vue编译单文件直接运行', link: 'down'
 	}
 ])

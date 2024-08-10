@@ -17,7 +17,8 @@ import Ip from "./pages/tool/ip.vue";
 import Qr from "./pages/tool/qrcode.vue";
 import Weather from "./pages/tool/weather.vue";
 import Tts from "./pages/tool/tts.vue";
-import Ai from "./pages/tool/ais.vue";
+import Ai from "./pages/tool/ai.vue";
+import Text from "./pages/tool/text.vue";
 import Mbti from "./pages/tests/mbti.vue";
 import Not from "./pages/404.vue";
 const routes = [
@@ -35,6 +36,7 @@ const routes = [
   { path: "/weather", name: "天气查询", component: Weather},
   { path: "/tts", name: "TTS 文本朗读", component: Tts},
   { path: "/ai", name: "AI优化助手", component: Ai},
+  { path: "/text", name: "成语词典", component: Text},
   {
     path: "/:error*", // 会匹配所有路径
     name: "404",

@@ -1,5 +1,5 @@
 <template>
-    <el-card style="margin:30px">
+    <el-card style="margin:30px" v-loading="loading" >
       <h2 style="margin:10px">AI 优化助手</h2>
       <el-input v-model="tq" :rows="2" type="textarea" style="width: 80%;margin:20px" placeholder="提问内容....."/><br>
       <el-input v-model="tcode"  style="width: 80px;margin-left:20px" placeholder="验证码"/>
@@ -13,6 +13,7 @@
 import { ElLoading } from 'element-plus'
 import { ref } from "vue"
 import OpenAI from "openai"
+const loading=ref(false)
  const ta=ref('')
  const tcode=ref('')
  const ttcode=ref('')
@@ -33,7 +34,7 @@ codeget()
  })
   
  async function main(){
-  const l1 = ElLoading.service({ fullscreen: true })
+  loading.value=true;
   let a=tq.value;
    if(tcode.value==ttcode.value){
     try{
@@ -46,14 +47,15 @@ codeget()
          temperature: 0.3,
      })
      ta.value=completion.choices[0].message.content
-     l1.close()
+     loading.value=false;
      ElMessage.success("加载完毕")
      console.log(ta.value)
     }catch(err){
-      ElMessage.error("error")
-      l1.close()
+      loading.value=false;
+      ElMessage.error("错误！")
     }
    }else{
+    loading.value=false;
     ElMessage.error("验证码错误！")
     l1.close()
    }

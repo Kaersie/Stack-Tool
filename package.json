@@ -9,14 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@baiducloud/qianfan": "^0.1.7",
     "@element-plus/icons-vue": "^2.3.1",
-    "axios": "^1.7.3",
-    "dotenv": "^16.4.5",
     "easy-typer-js": "^2.1.0",
     "element-plus": "^2.7.8",
     "openai": "^4.55.4",
     "screenfull": "^6.0.2",
+    "tdesign-icons-vue-next": "^0.2.4",
     "vue": "^3.4.31",
     "vue-demi": "^0.14.10",
     "vue-router": "^4.4.2",
@@ -24,7 +22,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
-    "concurrently": "^8.2.2",
     "less": "^4.2.0",
     "sass-embedded": "^1.77.8",
     "unplugin-auto-import": "^0.18.2",

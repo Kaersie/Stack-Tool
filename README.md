@@ -14,6 +14,20 @@
 
 拖拽分屏时钟√
 
+智能助手√
+
+MBTI√
+
+TTS朗读√
+
+天气查询√
+
+二维码制作√
+
+IP查询√
+
+成语查询√
+
 时钟精度到达毫秒⚪
 
 增加抽签工具板块⚪
@@ -49,7 +63,7 @@ Github：[Kaersie](https://github.com/kaersie)
 [ScreenFull](https://github.com/sindresorhus/screenfull)  
 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components)  
 [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import)
-
+[OoyonghongoO](https://api.vore.top/)
 
 
 # Stack-Tool
