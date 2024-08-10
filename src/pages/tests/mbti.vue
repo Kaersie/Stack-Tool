@@ -491,14 +491,11 @@ function ff(){
 <style>
 .pp{
     width:80px;
-    
+    margin-bottom: 20px;
     font-size:1em
 }
 .off{
     visibility: hidden;
-}
-p{
-    margin-bottom: 20px;
 }
 .description__content{
     margin: 0 0 20px 0;
