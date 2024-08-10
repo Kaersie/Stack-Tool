@@ -7,7 +7,7 @@
       <h3 style="margin:20px">所在位置: <el-input v-model="ipp" style="width: 150px " size="large"/></h3>
       <h3 style="margin:20px">邮政编码: <el-input v-model="ipy" style="width: 150px " size="large"/></h3>
       <h3 style="margin:20px">服务商: <el-input v-model="ipf" style="width: 150px " size="large"/></h3><br><br>
-      <a class="thanks" href="https://api.vore.top/">API：VORE-API</a><br><br>
+     
       <p>{{ isv }}</p>
     </el-card>
 </template>
