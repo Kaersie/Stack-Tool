@@ -6,6 +6,9 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    'process.env': {}
+  },
 
   plugins: [vue(),
   AutoImport({
@@ -16,8 +19,7 @@ export default defineConfig({
   }),
   ],
   server: {				// ← ← ← ← ← ←
-    host: '0.0.0.0'	,// ← 新增内容 ←
-    },
+    host: '0.0.0.0'	},
   build: {
     rollupOptions: {
       output: {

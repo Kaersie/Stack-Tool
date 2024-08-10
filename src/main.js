@@ -17,7 +17,7 @@ import Ip from "./pages/tool/ip.vue";
 import Qr from "./pages/tool/qrcode.vue";
 import Weather from "./pages/tool/weather.vue";
 import Tts from "./pages/tool/tts.vue";
-import Ai from "./pages/tool/ai.vue";
+import Ai from "./pages/tool/ais.vue";
 import Mbti from "./pages/tests/mbti.vue";
 import Not from "./pages/404.vue";
 const routes = [
