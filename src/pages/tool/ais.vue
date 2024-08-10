@@ -10,12 +10,28 @@
     </el-card>
 </template>
 <script setup>
-fetch(`https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=2wQRMiOAHsbaZuwgg4P5yzyT&client_secret=qGi6zl7aKEdl4FjsmaJoXvClZrR3NWCs`,{
-    method: 'GET',
-    mode: 'cors'
-})
-  .then((res)=>res.json)
-  .then((data)=>console.log(data))
+//安装包：npm install qianfan
+import {ChatCompletion, setEnvVariable} from "@baiducloud/qianfan";
+setEnvVariable('QIANFAN_AK',"2wQRMiOAHsbaZuwgg4P5yzyT");
+setEnvVariable('QIANFAN_SK',"qGi6zl7aKEdl4FjsmaJoXvClZrR3NWCs");
+
+
+const client = new ChatCompletion({Endpoint: 'ERNIE-Lite-8K'});
+async function main() {
+    const resp = await client.chat({
+                "messages": [
+                        {
+                                "role": "user",
+                                "content": "nihao"
+                        }
+                ],
+                "temperature": 0.95,
+                "top_p": 0.7,
+                "penalty_score": 1
+        });
+    console.log(resp);
+}
+main();
 
 
 </script>
