@@ -34,7 +34,7 @@ const routes = [
   { path: "/qrcode", name: "二维码生成", component: Qr },
   { path: "/weather", name: "天气查询", component: Weather},
   { path: "/tts", name: "TTS 文本朗读", component: Tts},
-  { path: "/ai", name: "AI", component: Ai},
+  { path: "/ai", name: "AI优化助手", component: Ai},
   {
     path: "/:error*", // 会匹配所有路径
     name: "404",
