@@ -15,8 +15,18 @@ export default defineConfig({
   }),
   ],
   server: {				// ← ← ← ← ← ←
-    host: '0.0.0.0'	// ← 新增内容 ←
-  }		,
+    host: '0.0.0.0'	,// ← 新增内容 ←
+    https: false,
+    // 是否自动在浏览器打开
+    open: true,
+    cors: true,
+    proxy: {
+      '/path': {
+        target: 'https://aip.baidubce.com',    // 接口域名,接口服务器地止
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/path/, '')
+    },},
   build: {
     rollupOptions: {
       output: {
@@ -29,3 +39,4 @@ export default defineConfig({
     }
   }
 })
+
