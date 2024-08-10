@@ -9,12 +9,11 @@
       <br><br>
     </el-card>
 </template>
-<script setup>
-//安装包：npm install qianfan
+<script>
+
 import {ChatCompletion, setEnvVariable} from "@baiducloud/qianfan";
 setEnvVariable('QIANFAN_AK',"2wQRMiOAHsbaZuwgg4P5yzyT");
 setEnvVariable('QIANFAN_SK',"qGi6zl7aKEdl4FjsmaJoXvClZrR3NWCs");
-
 
 const client = new ChatCompletion({Endpoint: 'ERNIE-Lite-8K'});
 async function main() {

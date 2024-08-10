@@ -11,6 +11,7 @@
   "dependencies": {
     "@baiducloud/qianfan": "^0.1.7",
     "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.7.3",
     "dotenv": "^16.4.5",
     "easy-typer-js": "^2.1.0",
     "element-plus": "^2.7.8",
