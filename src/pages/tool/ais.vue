@@ -10,7 +10,10 @@
     </el-card>
 </template>
 <script setup>
-fetch(`https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=2wQRMiOAHsbaZuwgg4P5yzyT&client_secret=qGi6zl7aKEdl4FjsmaJoXvClZrR3NWCs`)
+fetch(`https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=2wQRMiOAHsbaZuwgg4P5yzyT&client_secret=qGi6zl7aKEdl4FjsmaJoXvClZrR3NWCs`,{
+    method: 'GET',
+    mode: 'cors'
+})
   .then((res)=>res.json)
   .then((data)=>console.log(data))
 
