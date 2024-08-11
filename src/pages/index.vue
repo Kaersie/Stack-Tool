@@ -115,7 +115,7 @@
 .text::after {
 	content: '';
 	position: absolute;
-	height: 80px;
+	height: 70px;
 	width: 3px;
 	background-color: #fff;
 	animation: san 0.5s steps(1) infinite;

@@ -86,34 +86,6 @@
 	box-sizing: border-box;
 }
 
-.text {
-	display: inline-block;
-	position: relative;
-	font-size: 80px;
-	height: 100px;
-	line-height: 60px;
-	color: rgb(245, 245, 245);
-	margin-bottom: 20px;
-}
-
-.text2 {
-	display: inline-block;
-	position: relative;
-	font-size: 40px;
-	height: 40px;
-	line-height: 45px;
-	color: rgb(245, 245, 245);
-}
-
-.text::after {
-	content: '';
-	position: absolute;
-	right: -10px;
-	height: 80px;
-	width: 3px;
-	background-color: #fff;
-	animation: san 0.5s steps(1) infinite;
-}
 
 @keyframes san {
 
