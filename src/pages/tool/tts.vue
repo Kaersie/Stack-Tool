@@ -19,7 +19,7 @@ function go(){
          then((res) => res.json()
          .then((data1) => {
           const{data:{download,info}}=data1;
-          isv.value=download;
+          isv.value="https"+download.slice(4);
           if(info=="生成成功"){
             ElMessage({
                 message: info,
