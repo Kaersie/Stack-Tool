@@ -9,7 +9,7 @@
      
     </el-card>
 </template>
-<script>
+<script setup>
 import  { ref } from 'vue'
 const ta=ref('')
 const isv=ref('')

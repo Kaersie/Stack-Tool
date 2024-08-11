@@ -133,14 +133,14 @@ function full(){
    var countdown = document.getElementById('now_time');
   countdown.innerHTML=time.value+":00"
    t=time.value*60
-   //t=time.value
+  // t=time.value
 }
 const ins=ref()
 const tomato=ref(0)
 tomato.value=parseInt(localStorage.getItem("tomato"));
 if (localStorage.getItem("tomato")==null){
     localStorage.setItem("tomato", 0);
-    tomato.value=localStorage.getItem("tomato");
+    tomato.value=0
 }
 console.log(tomato.value)
 
@@ -148,7 +148,7 @@ const tomatot=ref(0)
 tomatot.value=parseInt(localStorage.getItem("tomatot"));
 if (localStorage.getItem("tomatot")==null){
     localStorage.setItem("tomatot", 0);
-    tomatot.value=localStorage.getItem("tomatot");
+    tomato.value=0
 }
 
 let tf;
@@ -159,9 +159,9 @@ let tf;
             if (t==0){
                 open=false;
                 t=time.value*60;
+                tomato.value=parseInt(tomato.value)+1;
+                tomatot.value=parseInt(tomatot.value)+parseInt(time.value)
                 countdown.innerHTML="Finish!"
-                tomato.value+=1;
-                tomatot.value=tomatot.value+time.value
                 localStorage.setItem('tomato',tomato.value);
                 localStorage.setItem('tomatot',tomatot.value);
                 clearInterval(tf)

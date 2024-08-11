@@ -7,16 +7,16 @@
   <path d="M9 2h5v5H9V2Zm1 1v3h3V3h-3ZM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8H8Zm2 2H9V9h1v1Zm4 2h-1v1h-2v1h3v-2Zm-4 2v-1H8v1h2Z"/>
   <path d="M12 9h2V8h-2v1Z"/>
 	</svg>  二维码生成</h2>
-      <el-input v-model="qrtext" :rows="2" type="textarea" style="width: 80%;margin:20px  " placeholder="二维码内容....."/><br>
+      <el-input v-model="qrstext" :rows="2" type="textarea" style="width: 80%;margin:20px  " placeholder="二维码内容....."/><br>
       <el-button style="margin:20px" @click="go" bg text>生成</el-button><br>
       <img style="width: 200px; margin:20px" :src="url"/><br><br>
     </el-card>
 </template>
 <script setup>
 import  { ref } from 'vue'
-const qrtext=ref('')
+const qrstext=ref('')
 const url =ref('https://api.vore.top/api/QRcode?text=text&size=200&frame=1')
 function go(){
-    url.value="https://api.vore.top/api/QRcode?text="+qrtext.value+"&size=200&frame=1";
+    url.value="https://api.vore.top/api/QRcode?text="+qrstext.value+"&size=200&frame=1";
 }
 </script>

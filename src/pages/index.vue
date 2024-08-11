@@ -3,12 +3,12 @@
 	<br>
 	<div id="introduce" style="margin: 50px;margin-top: 100px;">
 		<h1 class="text" style="line-height: 90px;">
-
+			{{ saying1 }}
 		</h1>
 		<br><br><br>
-		<h1 class="text2">
-
-		</h1>
+		<h2 class="text2">
+			{{saying2}}
+		</h2>
 	</div>
 	<br><br><br>
 
@@ -100,17 +100,13 @@
 .text {
 	display: inline-block;
 	position: relative;
-	font-size: 80px;
-	height: 100px;
-	line-height: 60px;
+	height: 20px;
+	line-height: 20px;
 	color: rgb(245, 245, 245);
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .text2 {
-	display: inline-block;
-	position: relative;
-	font-size: 40px;
 	height: 40px;
 	line-height: 45px;
 	color: rgb(245, 245, 245);
@@ -119,7 +115,6 @@
 .text::after {
 	content: '';
 	position: absolute;
-	right: -10px;
 	height: 80px;
 	width: 3px;
 	background-color: #fff;
@@ -154,6 +149,15 @@ function jump(link) {
 	router.push(link)
 	}
 }
+const saying1=ref("Hello,World!")
+const saying2=ref("")
+
+fetch(`https://tenapi.cn/v2/yiyan?format=json`).then((res) => res.json()).then((data) => {
+	const{data:{hitokoto,source,author}}=data;
+	saying1.value=hitokoto;
+
+	saying2.value="来源于 "+source+" - "+author
+})
 
 const items = reactive([
 	{
@@ -248,67 +252,7 @@ const items = reactive([
 	}
 ])
 console.log(items)
-window.onload = () => {
-	t1();
-	t2();
-}
 
-function t1() {
-	const text = document.querySelector('.text2');
-	const txt = ["我们用极简的技术换取合适的效果", "为您用有限的时间换取无尽的自由"];
-
-	var index = 0;
-	var xiaBiao = 0;
-	var huan = true;
-
-	setInterval(function () {
-
-		if (huan) {
-			text.innerHTML = txt[xiaBiao].slice(0, ++index);
-			//console.log(index);
-		}
-		else {
-			text.innerHTML = txt[xiaBiao].slice(0, index--);
-			//console.log(index);
-		}
-
-		if (index == txt[xiaBiao].length + 3) {
-			huan = false;
-		}
-		else if (index < 0) {
-			index = 0;
-			huan = true;
-			xiaBiao++;
-			if (xiaBiao >= txt.length) {
-				xiaBiao = 0;
-			}
-		}
-
-	}, 200)
-}
-
-function t2() {
-	const text = document.querySelector('.text');
-	const txt = ["Less is More."];
-
-	var index = 0;
-	var xiaBiao = 0;
-	var huan = true;
-
-	setInterval(function () {
-
-		if (huan) {
-			text.innerHTML = txt[xiaBiao].slice(0, ++index);
-			//console.log(index);
-		}
-
-		if (index == txt[xiaBiao].length + 3) {
-			huan = false;
-		}
-
-
-	}, 200)
-}
 </script>
 <style>
 .k{
