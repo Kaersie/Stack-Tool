@@ -35,6 +35,7 @@
 	<p>成语查询√</p>
 	<p>MBTI√</p>
 	<p>拖拽分屏时钟√</p>
+	<p>懒加载√</p>
 	<p>时钟精度到达毫秒⚪</p>
 	<p>增加抽签工具板块⚪</p>
 	<p>增加网页工具板块⚪</p>	
@@ -62,6 +63,9 @@
 		<br><a class="thanks" href="https://github.com/unplugin/unplugin-vue-components">unplugin-vue-components</a>
 		<br><a class="thanks" href="https://github.com/unplugin/unplugin-auto-import">unplugin-auto-import</a>
 		<br><a class="thanks" href="https://api.vore.top/">OoyonghongoO</a><br><br>
+		<br><a class="thanks" href="https://platform.moonshot.cn/">MoonShot</a><br><br>
+		<br><a class="thanks" href="https://api.ipify.org">Ipify</a><br><br>
+
 		<h3>本软件基于 GPL-3.0 开源协议</h3>
   </el-drawer>
 

@@ -4,22 +4,23 @@ import { createApp } from "vue";
 import "element-plus/theme-chalk/dark/css-vars.css";
 import App from "./App.vue";
 import { createWebHashHistory, createRouter } from "vue-router";
-import Index  from './pages/index.vue'
-import Index2  from './pages/clocks/index2.vue'
-import Number_Clock  from './pages/clocks/number-clock.vue'
-import Tomato_Clock  from './pages/clocks/tomato-clock.vue'
-import Muti_Clock  from './pages/clocks/muti-clock.vue'
-import Float_Clock  from './pages/clocks/float-clock.vue'
-import Unfloat_Clock  from './pages/clocks/unfloat-clock.vue'
-import Split_Clock  from './pages/clocks/split-clock.vue'
-import Ip  from './pages/tool/ip.vue'
-import Qr  from './pages/tool/qrcode.vue'
-import Weather  from './pages/tool/weather.vue'
-import Tts  from './pages/tool/tts.vue'
-import Ai  from './pages/tool/ai.vue'
-import Text  from './pages/tool/text.vue'
-import Mbti  from './pages/tests/mbti.vue'
-import Not  from './pages/404.vue'
+
+const Index  = () => import('./pages/index.vue')
+const Index2  = () => import('./pages/clocks/index2.vue')
+const Number_Clock  = () => import('./pages/clocks/number-clock.vue')
+const Tomato_Clock  = () => import('./pages/clocks/tomato-clock.vue')
+const Muti_Clock  = () => import('./pages/clocks/muti-clock.vue')
+const Float_Clock  = () => import('./pages/clocks/float-clock.vue')
+const Unfloat_Clock  = () => import('./pages/clocks/unfloat-clock.vue')
+const Split_Clock  = () => import('./pages/clocks/split-clock.vue')
+const Ip  = () => import('./pages/tool/ip.vue')
+const Qr  = () => import('./pages/tool/qrcode.vue')
+const Weather  = () => import('./pages/tool/weather.vue')
+const Tts  = () => import('./pages/tool/tts.vue')
+const Ai  = () => import('./pages/tool/ai.vue')
+const Text  = () => import('./pages/tool/text.vue')
+const Mbti  = () => import('./pages/tests/mbti.vue')
+const Not  = () => import('./pages/404.vue')
 const routes = [
   { path: "/", name: "首页", component: Index },
   { path: "/index2", name: "首页2", component: Index2 },

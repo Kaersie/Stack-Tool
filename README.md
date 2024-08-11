@@ -28,6 +28,8 @@ IP查询√
 
 成语查询√
 
+懒加载√
+
 时钟精度到达毫秒⚪
 
 增加抽签工具板块⚪
@@ -64,7 +66,8 @@ Github：[Kaersie](https://github.com/kaersie)
 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components)  
 [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import)
 [OoyonghongoO](https://api.vore.top/)
-
+[MoonShot](https://platform.moonshot.cn/)
+[Ipify](https://api.ipify.org)
 
 # Stack-Tool
  
