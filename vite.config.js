@@ -7,7 +7,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
-  plugins: [vue(),//viteSingleFile(),
+  plugins: [vue(),viteSingleFile(),
   AutoImport({
     resolvers: [ElementPlusResolver()],
   }),
@@ -19,15 +19,15 @@ export default defineConfig({
     host: '0.0.0.0',
     },
   build: {
-    rollupOptions: {
-      output: {
+    //rollupOptions: {
+     // output: {
      //    manualChunks(id) { // 分包
      //     if (id.includes('node_modules')) {
      //      return id.toString().split('node_modules/')[1].split('/')[0].toString();
      //    }
      //   }
-      }
-    }
+     // }
+   // }
   }
 })
 
