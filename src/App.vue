@@ -6,7 +6,7 @@ const route = useRoute();
 watch(
 	() => route.name,
 	(titles) => {
-		document.title = "工具栈(原时间栈)-" + titles;
+		document.title = "-" + titles;
 	},
 	{ immediate: true, deep: true }
 );
