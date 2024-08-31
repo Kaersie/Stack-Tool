@@ -5,10 +5,18 @@
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-1 0A7 7 0 1 0 1 8a7 7 0 0 0 14 0z"/>
 				</svg>  AI 优化助手</h2>
       <el-input v-model="tq" :rows="2" type="textarea" style="width: 80%;margin:20px" placeholder="提问内容....."/><br>
-      <el-button style="margin:20px" @click="main" bg text>生成</el-button><br>
+      <el-button class="search" @click="main" bg text>生成</el-button><br>
       <el-input v-model="ta" :rows="8" type="textarea" style="width: 80%;margin:20px" placeholder="这里会显示ai回答....."/><br>
       <br><br>
     </el-card>
+    <div>
+  <h3 style="text-align: center;">网站浏览次数</h3><br>
+  <div style="text-align: center; width:100%;height:100%; display: table;">
+   <span style="display: table-cell; vertical-align: middle; ">
+    <img style="margin:0 auto" src="https://api.vore.top/api/ACGcount?code=toolstack">
+   </span>
+</div>
+ </div>
 </template>
 
 <script setup>

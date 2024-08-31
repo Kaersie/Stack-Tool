@@ -84,6 +84,14 @@
 		</el-col>
 		
 	</el-row>
+	<div>
+  <h3 style="text-align: center;">网站浏览次数</h3><br>
+  <div style="text-align: center; width:100%;height:100%; display: table;">
+   <span style="display: table-cell; vertical-align: middle; ">
+    <img style="margin:0 auto" src="https://api.vore.top/api/ACGcount?code=toolstack">
+   </span>
+</div>
+ </div>
 </template>
 <style>
 .card {
@@ -148,8 +156,6 @@ function jump(link) {
 		drawer.value=true
 	} else if(link=="down"){
 		location.href="https://grasp.lanzout.com/b00659rdjg"
-	}else if(link=="test"){
-		alert("您的测试码是： "+"2012024")
 	}
 	else{
 	router.push(link)
@@ -158,11 +164,11 @@ function jump(link) {
 const saying1=ref("Hello,World!")
 const saying2=ref("")
 
-fetch(`https://tenapi.cn/v2/yiyan?format=json`).then((res) => res.json()).then((data) => {
-	const{data:{hitokoto,source,author}}=data;
-	saying1.value=hitokoto;
+fetch(`https://api.vore.top/api/hitokoto?type=json`).then((res) => res.json()).then((data) => {
+	const{data:{text,from}}=data;
+	saying1.value=text;
 
-	saying2.value="来源于 "+source+" - "+author
+	saying2.value="来源于 "+from
 })
 
 const items = reactive([

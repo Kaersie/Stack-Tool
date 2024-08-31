@@ -2,10 +2,18 @@
     <el-card style="margin:30px" >
       <h2 style="margin:10px">成语词典</h2>
       <el-input v-model="tq" style="width: 30%;margin:20px" placeholder="成语"/><br>
-      <el-button style="margin:20px" @click="main" bg text>生成</el-button><br>
+      <el-button class="search" @click="main" bg text>查询</el-button><br>
       <el-input v-model="ta" :rows="6" type="textarea" style="width: 80%;margin:20px" placeholder="这里会显示结果....."/><br>
       <br><br>
     </el-card>
+    <div>
+  <h3 style="text-align: center;">网站浏览次数</h3><br>
+  <div style="text-align: center; width:100%;height:100%; display: table;">
+   <span style="display: table-cell; vertical-align: middle; ">
+    <img style="margin:0 auto" src="https://api.vore.top/api/ACGcount?code=toolstack">
+   </span>
+</div>
+ </div>
 </template>
 <script setup>
 import { ref } from "vue"

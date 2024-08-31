@@ -1,10 +1,6 @@
-/*
- * 翻牌时钟
- * @author： 兔子先生
- * @createDate: 2019-11-24
- */
+
 <template>
-  <div  style="" class="father" id="fullele">
+  <div   class="father" id="fullele" style="background-color:#141414">
   <div class="FlipClock" id="clockitself"  style="background-color:#141414">
     <Flipper ref="flipperHour1" />
     <Flipper ref="flipperHour2" />

@@ -15,7 +15,7 @@ watch(
 <template>
 	<Title></Title>
 	<RouterView />
-	
+    <img style="visibility: hidden" src="https://api.vore.top/api/ACGcount?code=toolstack">
 </template>
 
 <style scoped></style>

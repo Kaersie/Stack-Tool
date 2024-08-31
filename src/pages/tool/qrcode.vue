@@ -8,9 +8,17 @@
   <path d="M12 9h2V8h-2v1Z"/>
 	</svg>  二维码生成</h2>
       <el-input v-model="qrstext" :rows="2" type="textarea" style="width: 80%;margin:20px  " placeholder="二维码内容....."/><br>
-      <el-button style="margin:20px" @click="go" bg text>生成</el-button><br>
+      <el-button class="search" @click="go" bg text>生成</el-button><br>
       <img style="width: 200px; margin:20px" :src="url"/><br><br>
     </el-card>
+    <div>
+  <h3 style="text-align: center;">网站浏览次数</h3><br>
+  <div style="text-align: center; width:100%;height:100%; display: table;">
+   <span style="display: table-cell; vertical-align: middle; ">
+    <img style="margin:0 auto" src="https://api.vore.top/api/ACGcount?code=toolstack">
+   </span>
+</div>
+ </div>
 </template>
 <script setup>
 import  { ref } from 'vue'

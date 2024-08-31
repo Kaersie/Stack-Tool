@@ -6,7 +6,6 @@ import App from "./App.vue";
 import { createWebHashHistory, createRouter } from "vue-router";
 
 const Index  = () => import('./pages/index.vue')
-const Index2  = () => import('./pages/clocks/index2.vue')
 const Number_Clock  = () => import('./pages/clocks/number-clock.vue')
 const Tomato_Clock  = () => import('./pages/clocks/tomato-clock.vue')
 const Muti_Clock  = () => import('./pages/clocks/muti-clock.vue')
@@ -23,7 +22,6 @@ const Mbti  = () => import('./pages/tests/mbti.vue')
 const Not  = () => import('./pages/404.vue')
 const routes = [
   { path: "/", name: "首页", component: Index },
-  { path: "/index2", name: "首页2", component: Index2 },
   { path: "/numberclock", name: "数字时钟", component: Number_Clock },
   { path: "/muticlock", name: "模拟时钟", component: Muti_Clock },
   { path: "/tomatoclock", name: "番茄时钟", component: Tomato_Clock },

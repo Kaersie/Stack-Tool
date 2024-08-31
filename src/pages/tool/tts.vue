@@ -8,6 +8,14 @@
       <br><br>
      
     </el-card>
+    <div>
+  <h3 style="text-align: center;">网站浏览次数</h3><br>
+  <div style="text-align: center; width:100%;height:100%; display: table;">
+   <span style="display: table-cell; vertical-align: middle; ">
+    <img style="margin:0 auto" src="https://api.vore.top/api/ACGcount?code=toolstack">
+   </span>
+</div>
+ </div>
 </template>
 <script setup>
 import  { ref } from 'vue'

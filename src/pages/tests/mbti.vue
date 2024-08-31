@@ -1,17 +1,17 @@
 <template>
     <div>
-    <h2 style="margin: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+    <h2 class="mmm"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
 			<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>	</svg>  MBTI 测试器</h2>
-    <p  style="margin: 30px;">
+    <p  class="mmm">
         注意事项: 1.请在心态平和及时间充足的情况下才开始答题。<br>
         2.每道题目均有两个答案:A和B。请仔细阅读题目,按照与你性格相符的程度选择。 <br>
         3.请注意,题目的答案无对错之分,你不需要考虑哪个答案“应该”更好,而且不要在任何问题上思考太久,而是应该凭你心里的第一反应做出选择。 <br>
         4.如果你觉得在不同的情境里,两个答案或许都能反映你的倾向,请选择一个对于你的行为方式来说最自然、最顺畅和最从容的答案。<br>
         5.空题将视作中立,过多中立答案会影响结果
     </p>
-    <el-button style="margin: 30px;" @click="ff3" text bg>极速版(12题，不大准确)</el-button>
-    <el-button style="margin: 30px;" @click="ff2" text bg>简易版(48题，还算准确)</el-button>
-    <el-button style="margin: 30px;" @click="ff1" text bg>完整版(93题，较为准确)</el-button><br>
+    <el-button class="mmm" @click="ff3" text bg>极速版(12题，不大准确)</el-button>
+    <el-button class="mmm" @click="ff2" text bg>简易版(48题，还算准确)</el-button>
+    <el-button class="mmm" @click="ff1" text bg>完整版(93题，较为准确)</el-button><br>
         <div v-for="(item,index) in res">
     <p style="margin-left: 5px;font-weight: bold;" >{{index+1}}.{{ item.q }}</p>
     <el-row :gutter="15" >
@@ -27,7 +27,7 @@
 </el-row><br><br>
     </div>
     </div>
-    <el-button style="margin: 30px;" @click="ff" text bg>提交</el-button>
+    <el-button class="mmm" @click="ff" text bg>提交</el-button>
     <el-card style="max-width: 100%;margin: 20px;" :class="display">
     <template #header>
         <h2>{{name}}</h2>
@@ -35,6 +35,15 @@
          <el-image style="width: 100%;margin-top:30px;margin-bottom:30px" :src="img" :fit="full" />
     <div v-html="text"></div>
   </el-card>
+  <div>
+  <h3 style="text-align: center;">网站浏览次数</h3><br>
+  <div style="text-align: center; width:100%;height:100%; display: table;">
+   <span style="display: table-cell; vertical-align: middle; ">
+    <img style="margin:0 auto" src="https://api.vore.top/api/ACGcount?code=toolstack">
+   </span>
+</div>
+ </div>
+
 </template>
 <script setup>
 import data1 from '/public/data/mbti1.json'
@@ -502,8 +511,15 @@ function ff(){
     margin: 0 0 20px 0;
 }
 .on{
-       visibility: visible;}
+       visibility: visible;
+    }
+.mmm{
+    margin: 30px;
+}
 .ambti{
     color:#2a598a
+}
+.search{
+    margin:20px
 }
 </style>
