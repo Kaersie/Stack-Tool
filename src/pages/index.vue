@@ -18,7 +18,7 @@
     v-model="drawer"
     title="关于软件"
   >
-	<h1>工具栈(原时间栈)</h1><br>
+	<h1>对角工具巷(原工具栈)</h1><br>
 	<a class="thanks" href="https://toolstack.rth5.com/">https://toolstack.rth5.com/  (复制打开)</a>
 	<p>这是一个用 Vue + Element UI 构建的时间工具，以简洁的设计为您高效工作提供帮助</p><br><br>
 	<h2>功能</h2><br>
